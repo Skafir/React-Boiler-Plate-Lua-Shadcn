@@ -41,7 +41,7 @@ export const VisibilityProvider: React.FC<{ children: React.ReactNode }> = ({ ch
         setVisible
       }}
     >
-      <div className={`transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0"} h-full`}>
+      <div className={`transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0"} h-full dark`}>
         {children}
       </div>
     </VisibilityCtx.Provider>)

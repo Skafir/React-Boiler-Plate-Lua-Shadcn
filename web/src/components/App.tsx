@@ -48,11 +48,11 @@ const App: React.FC = () => {
 
   return (
     <div className="flex h-screen justify-center items-center">
-      <div className='bg-stone-800 rounded-xl w-[700px] h-[400px] flex justify-center items-center text-white text-center'>
-        <div>
+      <div className='bg-stone-800 rounded w-[700px] h-[400px] flex justify-center items-center text-white text-center'>
+        <div className="space-y-1.5">
           <h1 className='text-lg font-medium'>This is the NUI Popup !</h1>
-          <p className='text-base font-medium pb-2'>Exit with the escape key</p>
-          <Button onClick={handleGetClientData}>Get Client Data</Button>
+          <p className='text-base font-medium'>Exit with the escape key</p>
+          <Button onClick={handleGetClientData} className="rounded-full mt-2">Get Client Data</Button>
           {clientData && <ReturnClientDataComp data={clientData} />}
         </div>
       </div>
