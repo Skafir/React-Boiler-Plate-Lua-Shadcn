@@ -1,6 +1,6 @@
-import React, {Context, createContext, useContext, useEffect, useState} from "react";
-import {useNuiEvent} from "@/hooks/useNuiEvent";
-import {fetchNui} from "@/utils/fetchNui";
+import React, { Context, createContext, useContext, useEffect, useState } from "react";
+import { useNuiEvent } from "@/hooks/useNuiEvent";
+import { fetchNui } from "@/utils/fetchNui";
 import { isEnvBrowser } from "@/utils/misc";
 
 const VisibilityCtx = createContext<VisibilityProviderValue | null>(null)
@@ -41,10 +41,10 @@ export const VisibilityProvider: React.FC<{ children: React.ReactNode }> = ({ ch
         setVisible
       }}
     >
-    <div style={{ visibility: visible ? 'visible' : 'hidden', height: '100%'}}>
-      {children}
-    </div>
-  </VisibilityCtx.Provider>)
+      <div className={`transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0"} h-full`}>
+        {children}
+      </div>
+    </VisibilityCtx.Provider>)
 }
 
 export const useVisibility = () => useContext<VisibilityProviderValue>(VisibilityCtx as Context<VisibilityProviderValue>)
