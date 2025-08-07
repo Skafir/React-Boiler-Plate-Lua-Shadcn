@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import {debugData} from "@/utils/debugData";
-import {fetchNui} from "@/utils/fetchNui";
+import React, { useState } from 'react';
+import { debugData } from "@/utils/debugData";
+import { fetchNui } from "@/utils/fetchNui";
 
 import { Button } from "@/components/ui/button"
 
@@ -18,7 +18,7 @@ interface ReturnClientDataCompProps {
   data: any
 }
 
-const ReturnClientDataComp: React.FC<ReturnClientDataCompProps> = ({data}) => (
+const ReturnClientDataComp: React.FC<ReturnClientDataCompProps> = ({ data }) => (
   <>
     <pre className='bg-stone-900 p-3 rounded-lg text-white m-3'>
       <code> Returned Data : {JSON.stringify(data, null)} </code>
@@ -42,7 +42,7 @@ const App: React.FC = () => {
       setClientData(retData)
     }).catch(e => {
       console.error('Setting mock data due to error', e)
-      setClientData({ x: 500, y: 300, z: 200})
+      setClientData({ x: 500, y: 300, z: 200 })
     })
   }
 
